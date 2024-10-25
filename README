@@ -1,0 +1,88 @@
+# MyApp Architecture Template
+
+Este repositorio proporciona una plantilla básica para un proyecto ASP.NET Core utilizando una arquitectura hexagonal. Incluye la configuración inicial para servicios, repositorios, autenticación, autorización y Swagger para documentación de API.
+
+## Estructura del Proyecto
+
+La estructura del proyecto está organizada en capas para promover la separación de preocupaciones y la escalabilidad:
+
+
+```plaintext
+MyApp
+│
+├── MyApp.Api                  // Capa de presentación (Web API)
+│   ├── Controllers
+│   ├── Middleware
+│   ├── Program.cs
+│   └── appsettings.json
+│
+├── MyApp.Application           // Capa de lógica de negocio
+│   ├── Services                // Servicios de aplicación
+│   ├── DTOs                   // Data Transfer Objects
+│   ├── Interfaces              // Interfaces de servicios
+│   ├── Validators              // Validadores de datos
+│   └── Extensions              // Métodos de extensión
+│       └── ServiceRegistration.cs // Aquí se registran los servicios
+│
+├── MyApp.Domain                // Capa de dominio
+│   ├── Entities                // Entidades del dominio
+│   ├── ValueObjects            // Objetos de valor
+│   └── Repositories            // Interfaces de repositorio
+│
+├── MyApp.Infrastructure         // Capa de infraestructura
+│   ├── Data                    // Contexto de base de datos y migraciones
+│   ├── Repositories            // Implementaciones del patrón Repository
+│   ├── Migrations              // Migraciones de Entity Framework
+│   └── Security                // Implementaciones de seguridad (JWT, CORS, etc.)
+│
+├── MyApp.Tests                 // Capa de pruebas
+│   ├── UnitTests
+│   └── IntegrationTests
+└──
+```
+
+
+## Características
+
+- **Arquitectura Hexagonal**: Separa la lógica de negocio de las preocupaciones de infraestructura, facilitando el mantenimiento y la evolución del código.
+- **Inyección de Dependencias**: Utiliza DI para gestionar las dependencias entre componentes.
+- **Swagger**: Incluye documentación de API generada automáticamente para facilitar las pruebas y la exploración de endpoints.
+- **Validación de Datos**: Incluye un esquema básico para la validación de datos utilizando validadores.
+- **Control de Acceso**: Implementa autenticación y autorización utilizando JWT.
+- **Pruebas Unitarias**: Proporciona una base para escribir pruebas unitarias e integradas.
+
+
+### 🔧 **Tecnologías Utilizadas:**
+- .NET 6.0
+- MySQL
+- Swagger
+- AutoMapper
+- EntityFramework
+- FluentValidation
+
+## Requisitos
+
+- [.NET 6.0 o superior](https://dotnet.microsoft.com/download/dotnet)
+- [MySQL](https://www.mysql.com/) (u otra base de datos, según la configuración)
+
+## Instalación
+
+1. Clona el repositorio:
+
+    ```bash
+        git clone https://github.com/hawkinsdev/arquitectura_hexagonal_net
+    ```
+2. Restaura los paquetes NuGet:
+    ```bash
+        dotnet restore
+    ```
+3. Configura la cadena de conexión en appsettings.json para tu base de datos.
+
+4. Inicia la aplicación:
+    ```bash
+        dotnet run --project MyApp.Api
+    ```
+    si quieres usar el hot reload agrega watch después de dotnet para tener actualizaciones automáticas mientras codificas.
+
+Contribuciones
+Las contribuciones son bienvenidas. Siéntete libre de hacer un fork del repositorio y enviar un pull request.
