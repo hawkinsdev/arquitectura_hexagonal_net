@@ -10,7 +10,7 @@ namespace MyApp.Domain.Entities
         public required string Email { get; set; }
         public string? Phone_number { get; set; }
         public required string Identification_number { get; set; }
-        public required string PasswordHash { get; set; }
+        public required string Password { get; set; }
         public int Id_Profile { get; set; }
         public bool Active { get; set; }
         public int State { get; set; }
