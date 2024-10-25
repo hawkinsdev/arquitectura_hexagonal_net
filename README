@@ -1,11 +1,9 @@
 # MyApp Architecture Template
-
-Este repositorio proporciona una plantilla básica para un proyecto ASP.NET Core utilizando una arquitectura hexagonal. Incluye la configuración inicial para servicios, repositorios, autenticación, autorización y Swagger para documentación de API.
+Este repositorio proporciona una plantilla básica para un proyecto ASP.NET Core utilizando una arquitectura hexagonal. 
+Incluye la configuración inicial para servicios, repositorios, autenticación, autorización y Swagger para documentación de API.
 
 ## Estructura del Proyecto
-
 La estructura del proyecto está organizada en capas para promover la separación de preocupaciones y la escalabilidad:
-
 
 ```plaintext
 MyApp
@@ -41,9 +39,7 @@ MyApp
 └──
 ```
 
-
 ## Características
-
 - **Arquitectura Hexagonal**: Separa la lógica de negocio de las preocupaciones de infraestructura, facilitando el mantenimiento y la evolución del código.
 - **Inyección de Dependencias**: Utiliza DI para gestionar las dependencias entre componentes.
 - **Swagger**: Incluye documentación de API generada automáticamente para facilitar las pruebas y la exploración de endpoints.
@@ -51,11 +47,12 @@ MyApp
 - **Control de Acceso**: Implementa autenticación y autorización utilizando JWT.
 - **Pruebas Unitarias**: Proporciona una base para escribir pruebas unitarias e integradas.
 
-
 ### 🔧 **Tecnologías Utilizadas:**
 - .NET 6.0
 - MySQL
 - Swagger
+- Moq
+- Xunit
 - AutoMapper
 - EntityFramework
 - FluentValidation
@@ -66,7 +63,6 @@ MyApp
 - [MySQL](https://www.mysql.com/) (u otra base de datos, según la configuración)
 
 ## Instalación
-
 1. Clona el repositorio:
 
     ```bash
@@ -83,6 +79,11 @@ MyApp
         dotnet run --project MyApp.Api
     ```
     si quieres usar el hot reload agrega watch después de dotnet para tener actualizaciones automáticas mientras codificas.
+
+5. Ejecutar las pruebas
+    ```bash
+        dotnet test
+    ```
 
 Contribuciones
 Las contribuciones son bienvenidas. Siéntete libre de hacer un fork del repositorio y enviar un pull request.
